@@ -16,6 +16,7 @@ In this project you'll choose an api to consume. You will build an application f
 
 ## Project Set Up
 
+
 - [ ] Create a forked copy of this project.
 - [ ] Add your team lead as collaborator on Github.
 - [ ] Clone your OWN version of the repository in your terminal.
@@ -49,5 +50,7 @@ This is the chance to let your skills shine! You have learned _sooo_ much the la
 Once you have chosen an API to consume, build an app that makes sense for the data you will be retrieving. Have fun with this. You get to be the creative mind. You get to make all the decisions here. I'm excited to see what you build!
 
 ## Stretch Problems
+
+Change.
 
 Take the app as far as you can go! Styling, redux hooks, another API, an input to fetch data dynamically, etc. Work on it, improve it until the end of the day. If you find yourself finishing with time left to spare, jump on with your TL or fellow student to ask them what feature they think you should build next. Good luck!
