@@ -30,7 +30,7 @@ const CocktailList = () => {
           <ul>
             {drinks.map((drink) => (
               <Item
-                onClick={() => dispatch(fetchCocktail(drink))}
+                onClick={() => dispatch(fetchCocktail(drink.idDrink))}
                 key={drink.idDrink}
               >
                 {drink.strDrink}
