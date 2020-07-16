@@ -1,6 +1,16 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+import styled from "styled-components";
 import { fetchCocktail } from "../store/actions";
+
+const Item = styled.li`
+  width: 25%;
+  margin: .5% auto;
+  &:hover {
+    background: #ff574c;
+  }
+`;
 
 const CocktailList = () => {
   const { drinks } = useSelector((state) => state);
@@ -19,12 +29,12 @@ const CocktailList = () => {
           <h3>Click on cocktail below to learn how to make it</h3>
           <ul>
             {drinks.map((drink) => (
-              <li
-                onClick={() => dispatch(fetchCocktail(drink.idDrink))}
+              <Item
+                onClick={() => dispatch(fetchCocktail(drink))}
                 key={drink.idDrink}
               >
                 {drink.strDrink}
-              </li>
+              </Item>
             ))}
           </ul>
         </div>

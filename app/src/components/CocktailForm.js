@@ -2,6 +2,32 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchCocktails } from "../store/actions";
 
+import styled from "styled-components";
+
+const Button = styled.button`
+  border-radius: 50px;
+  border: none;
+  margin: 5%;
+  padding: 10%;
+  background: #ff574c;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: .2s all;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 35px 35px 78px -20px rgba(0, 0, 0, 1);
+  }
+`;
+
+const Form = styled.form`
+display: flex;
+flex-direction: column;
+width: 25%;
+align-items: center;
+margin: auto;
+`
+
+
 const CocktailForm = () => {
   const [spirit, setSpirit] = useState("");
 
@@ -19,7 +45,7 @@ const CocktailForm = () => {
   return (
     <div>
       <h1>...or, find a cocktail by spirit used</h1>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <input
           type="text"
           name="spirit"
@@ -27,8 +53,8 @@ const CocktailForm = () => {
           placeholder="Enter spirit here"
           onChange={handleChanges}
         ></input>
-        <button type="submit">Find me some drinks</button>
-      </form>
+        <Button type="submit">Find me some drinks</Button>
+      </Form>
     </div>
   );
 };

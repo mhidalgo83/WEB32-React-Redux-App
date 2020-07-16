@@ -20,10 +20,12 @@ const Drink = styled.div`
 `;
 
 const DrinkImage = styled.img`
-  box-shadow: 35px 35px 78px -20px rgba(0, 0, 0, 0.5);
+  box-shadow: 35px 35px 78px -20px rgba(0, 0, 0, 1);
   
   }
 `;
+
+
 
 const Cocktail = () => {
   const { drink, isLoading, error } = useSelector((state) => state);

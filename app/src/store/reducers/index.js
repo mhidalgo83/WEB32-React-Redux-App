@@ -7,7 +7,7 @@ import {
   FETCH_COCKTAILS_FAILURE,
   SELECT_COCKTAIL_START,
   SELECT_COCKTAIL_SUCCESS,
-  SELECT_COCKTAIL_FAILURE
+  SELECT_COCKTAIL_FAILURE,
 } from "../actions";
 
 export const initialState = {
@@ -32,12 +32,16 @@ export const reducer = (state = initialState, action) => {
       return { ...state, isFetching: false, drinks: action.payload };
     case FETCH_COCKTAILS_FAILURE:
       return { ...state, isFetching: false, error: action.payload, drinks: [] };
-      case SELECT_COCKTAIL_START:
-        return{...state, isLoading: true, error: "", drink: {}};
-        case SELECT_COCKTAIL_SUCCESS:
-        return{...state, isLoading: false, drink: action.payload}
-        case SELECT_COCKTAIL_FAILURE:
-        return{...state, isLoading: false,}
+    case SELECT_COCKTAIL_START:
+      return { ...state, isLoading: true, error: "", drink: {} };
+    case SELECT_COCKTAIL_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        drink: action.payload
+      };
+    case SELECT_COCKTAIL_FAILURE:
+      return { ...state, isLoading: false };
     default:
       return state;
   }

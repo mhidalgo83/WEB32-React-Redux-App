@@ -1,4 +1,20 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const Button = styled.button`
+  border-radius: 50px;
+  border: none;
+  margin: 5%;
+  padding: 3%;
+  background: #ff574c;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s all;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 35px 35px 78px -20px rgba(0, 0, 0, 1);
+  }
+`;
 
 const CocktailInstructions = ({ drink }) => {
   const [isHidden, setIsHidden] = useState(true);
@@ -6,11 +22,12 @@ const CocktailInstructions = ({ drink }) => {
     e.preventDefault();
     setIsHidden(!isHidden);
   };
+
   return (
     <div>
       {isHidden ? (
         <>
-          <button onClick={handleClick}>How Do I Make This?</button>
+          <Button onClick={handleClick}>How Do I Make This?</Button>
         </>
       ) : (
         <>
@@ -65,7 +82,7 @@ const CocktailInstructions = ({ drink }) => {
               {drink.strMeasure15} {drink.strIngredient15}
             </li>
           </ul>
-          <button onClick={handleClick}>Close Ingredients</button>
+          <Button onClick={handleClick}>Close Ingredients</Button>
         </>
       )}
     </div>

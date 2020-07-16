@@ -52,16 +52,11 @@ export const fetchCocktails = (spirit) => (dispatch) => {
 
 // Search by id
 
-export const fetchCocktail = (id) => (dispatch) => {
+export const fetchCocktail = (drink) => (dispatch) => {
   dispatch({ type: SELECT_COCKTAIL_START });
-  axios
-    .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
-    .then((res) => {
-      console.log("select cocktail success res: ", res);
-      dispatch({ type: SELECT_COCKTAIL_SUCCESS, payload: res.data.drinks[0] });
-    })
-    .catch((err) => {
-      console.log(err);
-      dispatch({ type: SELECT_COCKTAIL_FAILURE });
-    });
+  dispatch({ type: SELECT_COCKTAIL_SUCCESS, payload: drink });
+  dispatch({
+    type: SELECT_COCKTAIL_FAILURE,
+    payload: "Unable to select drink. Please try again",
+  });
 };
