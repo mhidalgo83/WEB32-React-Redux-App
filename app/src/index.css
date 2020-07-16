@@ -19,5 +19,8 @@ ul {
 li {
   list-style-position: unset;
   list-style: none;
-  
+}
+
+li:hover {
+  cursor: pointer;
 }
